@@ -1,28 +1,49 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-container>
+      <pokemon-list :pokemonsList="pokemons"></pokemon-list>
+    </v-container>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import axios from "axios";
+import PokemonList from "./components/PokemonList.vue";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
+  name: "App",
 
+  components: {
+    "pokemon-list": PokemonList,
+  },
+
+  data: () => ({
+    pokemons: [],
+  }),
+
+  mounted() {
+    Array(150)
+      .fill()
+      .map((_, id) => {
+        axios
+          .get(`https://pokeapi.co/api/v2/pokemon/${id + 1}`)
+          .then((response) => this.pokemons.push(response.data));
+      });
+  },
+};
+</script>
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background: linear-gradient(
+      to bottom right,
+      rgba(10, 10, 10, 1),
+      rgba(12, 39, 63, 1)
+    )
+    no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover !important;
+  background-position: center;
+  min-height: 100vh;
 }
 </style>
