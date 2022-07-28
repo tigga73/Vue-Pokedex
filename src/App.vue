@@ -1,7 +1,13 @@
 <template>
   <v-app>
     <v-container>
-      <pokemon-list :pokemonsList="pokemons"></pokemon-list>
+      <v-text-field
+        v-model="search"
+        label="Pesquisar"
+        placeholder="Ex: Pikachu"
+        solo
+      ></v-text-field>
+      <pokemon-list :pokemonsList="filteredPokemonList"></pokemon-list>
     </v-container>
   </v-app>
 </template>
@@ -18,6 +24,7 @@ export default {
 
   data: () => ({
     pokemons: [],
+    search: "",
   }),
 
   mounted() {
@@ -33,6 +40,14 @@ export default {
       .then((response) => {
         response.map((pokemon) => this.pokemons.push(pokemon.data));
       });
+  },
+
+  computed: {
+    filteredPokemonList() {
+      return this.pokemons.filter((pokemon) =>
+        pokemon.name.includes(this.search)
+      );
+    },
   },
 };
 </script>

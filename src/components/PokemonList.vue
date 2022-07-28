@@ -26,9 +26,10 @@ export default {
 <style>
 .pokedex {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
   padding-inline-start: 0;
+  padding-left: 0 !important;
 }
 
 .card {
