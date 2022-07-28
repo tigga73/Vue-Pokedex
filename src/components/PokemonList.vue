@@ -27,7 +27,7 @@ export default {
 .pokedex {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 13px;
   padding-inline-start: 0;
   padding-left: 0 !important;
 }
