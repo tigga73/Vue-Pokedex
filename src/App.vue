@@ -21,12 +21,17 @@ export default {
   }),
 
   mounted() {
+    let listPokemonsUrls = [];
     Array(150)
       .fill()
-      .map((_, id) => {
-        axios
-          .get(`https://pokeapi.co/api/v2/pokemon/${id + 1}`)
-          .then((response) => this.pokemons.push(response.data));
+      .map((_, id) =>
+        listPokemonsUrls.push(`https://pokeapi.co/api/v2/pokemon/${id + 1}`)
+      );
+
+    axios
+      .all(listPokemonsUrls.map((endpoint) => axios.get(endpoint)))
+      .then((response) => {
+        response.map((pokemon) => this.pokemons.push(pokemon.data));
       });
   },
 };

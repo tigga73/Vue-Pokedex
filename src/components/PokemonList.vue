@@ -58,15 +58,15 @@ export default {
 }
 
 .fire {
-  background-color: #fddfdf;
+  background-color: #fbb4b4;
 }
 
 .grass {
-  background-color: #defde0;
+  background-color: #c1ffc5;
 }
 
 .electric {
-  background-color: #fcf7de;
+  background-color: #f9ff98;
 }
 
 .water,
@@ -75,7 +75,7 @@ export default {
 }
 
 .ground {
-  background-color: #f4e7da;
+  background-color: #cba15e;
 }
 
 .rock {
@@ -126,7 +126,7 @@ export default {
 .card-title {
   text-transform: capitalize;
   margin-bottom: 0px;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: normal;
   position: relative;
   z-index: 2;
