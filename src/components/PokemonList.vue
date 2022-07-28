@@ -116,6 +116,7 @@ export default {
 }
 
 .card:hover {
+  cursor: pointer;
   animation: bounce 0.5s linear;
 }
 
