@@ -27,7 +27,7 @@ export default {
     search: "",
   }),
 
-  mounted() {
+  created() {
     let listPokemonsUrls = [];
     Array(150)
       .fill()
