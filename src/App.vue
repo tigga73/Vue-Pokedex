@@ -14,7 +14,7 @@
       ></v-text-field>
       <pokemon-list :pokemonsList="filteredPokemonList"></pokemon-list>
     </v-container>
-    <h3 class="text-center">
+    <h3 class="text-center text-footer">
       Feito com ♥ por Tigga73<br /><a href="https://github.com/tigga73"
         >GitHub</a
       >
@@ -77,7 +77,7 @@ export default {
   min-height: 100vh;
 }
 
-h3 {
+.text-footer {
   color: #fff;
   margin: 30px 0 30px 0;
 }
