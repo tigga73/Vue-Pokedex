@@ -1,6 +1,11 @@
 <template>
   <v-app>
     <v-container>
+      <img class="center-block" src="../public/Pokedex.webp" alt="Pokedex" />
+      <div class="apresentation-text">
+        <h1 class="display-3 text-center">Pokedex</h1>
+        <h2 class="display-1 text-center">Encontre seu Pokémon abaixo:</h2>
+      </div>
       <v-text-field
         v-model="search"
         label="Pesquisar"
@@ -9,6 +14,11 @@
       ></v-text-field>
       <pokemon-list :pokemonsList="filteredPokemonList"></pokemon-list>
     </v-container>
+    <h3 class="text-center">
+      Feito com ♥ por Tigga73<br /><a href="https://github.com/tigga73"
+        >GitHub</a
+      >
+    </h3>
   </v-app>
 </template>
 
@@ -65,5 +75,20 @@ export default {
   background-size: cover !important;
   background-position: center;
   min-height: 100vh;
+}
+
+h3 {
+  color: #fff;
+  margin: 30px 0 30px 0;
+}
+
+.apresentation-text {
+  color: #fff;
+  margin: 30px 0 30px 0;
+}
+
+.center-block {
+  display: block;
+  margin: auto;
 }
 </style>

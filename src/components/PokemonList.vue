@@ -21,6 +21,9 @@
     </ul>
     <v-dialog v-model="showModal" width="50vw">
       <v-card v-if="selectedPokemon">
+        <v-btn class="colse-btn-modal" icon @click="showModal = !showModal">
+          <v-icon>mdi-close</v-icon>
+        </v-btn>
         <v-container class="pa-md-10">
           <v-row>
             <v-col class="flex" cols="6">
@@ -40,7 +43,9 @@
                 }}
               </p>
               <v-divider class="my-4"></v-divider>
-              <v-chip>Altura: {{ selectedPokemon.height / 10 }}m</v-chip>
+              <v-chip class="mb-2"
+                >Altura: {{ selectedPokemon.height / 10 }}m</v-chip
+              >
               <v-chip class="ml-2 mb-2"
                 >Peso: {{ selectedPokemon.weight }}kg</v-chip
               >
@@ -232,6 +237,10 @@ export default {
 
 .flex {
   display: flex;
+}
+
+.colse-btn-modal {
+  float: right;
 }
 
 @keyframes bounce {
