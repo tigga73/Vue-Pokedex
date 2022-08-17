@@ -4,7 +4,9 @@
       <img class="center-block" src="../public/Pokedex.webp" alt="Pokedex" />
       <div class="apresentation-text">
         <h1 class="display-3 text-center">Pokedex</h1>
-        <h2 class="display-1 text-center">Encontre seu Pokémon abaixo:</h2>
+        <h2 class="display-1 text-center">
+          Pesquise entre os 150 Pokémons clássicos
+        </h2>
       </div>
       <v-text-field
         v-model="search"
@@ -12,7 +14,9 @@
         placeholder="Ex: Pikachu"
         solo
       ></v-text-field>
-      <pokemon-list :pokemonsList="filteredPokemonList"></pokemon-list>
+      <pokemon-list
+        :pokemonsList="filteredPokemonList.slice(0, 8)"
+      ></pokemon-list>
     </v-container>
     <h3 class="text-center text-footer">
       Feito com ♥ por Tigga73<br /><a href="https://github.com/tigga73"
