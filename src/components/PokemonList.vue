@@ -1,5 +1,6 @@
 <template>
   <div>
+    <loading-animated v-if="!isLoaded"></loading-animated>
     <ul class="pokedex">
       <li
         class="card"
@@ -12,6 +13,7 @@
           class="card-image"
           :src="pokemon.sprites.other.dream_world.front_default"
           :alt="pokemon.name"
+          @load="onImgLoad"
         />
         <h2 class="card-title">{{ pokemon.id }}. {{ pokemon.name }}</h2>
         <p class="card-subtitle">
@@ -75,18 +77,27 @@
   </div>
 </template>
 <script>
+import LoadingAnimated from "./LoadingAnimated.vue";
 export default {
+  components: {
+    "loading-animated": LoadingAnimated,
+  },
+
   props: ["pokemonsList"],
 
   data: () => ({
     showModal: false,
     selectedPokemon: null,
+    isLoaded: false,
   }),
 
   methods: {
     showPokemonModal(pokemon) {
       this.selectedPokemon = pokemon;
       this.showModal = !this.showModal;
+    },
+    onImgLoad() {
+      this.isLoaded = true;
     },
   },
 };
