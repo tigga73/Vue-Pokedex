@@ -21,21 +21,21 @@
         </p>
       </li>
     </ul>
-    <v-dialog v-model="showModal" width="50vw">
+    <v-dialog v-model="showModal" class="modal-info">
       <v-card v-if="selectedPokemon">
         <v-btn class="colse-btn-modal" icon @click="showModal = !showModal">
           <v-icon>mdi-close</v-icon>
         </v-btn>
         <v-container class="pa-md-10">
           <v-row>
-            <v-col class="flex" cols="6">
+            <v-col class="flex" cols="12" md="6" xs="12">
               <img
                 class="img-responsive"
                 :src="selectedPokemon.sprites.other.dream_world.front_default"
                 :alt="selectedPokemon.name"
               />
             </v-col>
-            <v-col cols="6">
+            <v-col cols="12" md="6" xs="12">
               <h2 class="card-title">{{ selectedPokemon.name }}</h2>
               <p class="card-subtitle">
                 {{
@@ -254,6 +254,10 @@ export default {
   float: right;
 }
 
+.modal-info {
+  width: 50vw;
+}
+
 @keyframes bounce {
   20% {
     transform: translateY(-6px);
@@ -279,6 +283,12 @@ export default {
 @media screen and (max-width: 768px) {
   .pokedex {
     grid-template-columns: 1fr 1fr;
+  }
+  .modal-info {
+    width: 85vw;
+  }
+  .flex {
+    justify-content: center;
   }
 }
 
