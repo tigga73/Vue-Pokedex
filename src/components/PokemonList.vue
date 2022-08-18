@@ -113,7 +113,7 @@ export default {
 
 .card {
   list-style: none;
-  padding: 40px;
+  padding: 40px 0 40px 0;
   color: #222;
   text-align: center;
   border-radius: 20px;
@@ -267,6 +267,33 @@ export default {
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .pokedex {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pokedex {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .pokedex {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    margin: 0 2em 1.8em 2em;
+  }
+  .card::after {
+    width: 32%;
+    height: 40%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 </style>
