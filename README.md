@@ -1,7 +1,11 @@
 # Pokedex Com Vue.js
 
-Uma Pokedex bem quentinha para fãs de Pokemon e estudantes de Vue.js.
+A very warm Pokedex for Pokemon fans and Vue.js students.
 
-Feita com Vue2 e Vuetify, os Pokemons podem ser ordenados por _número_ ou _tipo_ e a cor do card de cada Pokemon é referente ao seu tipo primário.
+Made with Vue2 and Vuetify, Pokemons can be listed by _name_ or _number_ and each Pokemon's card color refers to its primary type.
 
 ![alt text](public/pokedex-sample.png)
+
+### Links
+
+* Live Preview: [subtle-clafoutis-64b2eb.netlify.app](subtle-clafoutis-64b2eb.netlify.app)
