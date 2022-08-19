@@ -8,4 +8,4 @@ Made with Vue2 and Vuetify, Pokemons can be listed by _name_ or _number_ and eac
 
 ### Links
 
-* Live Site URL: [https://example.com](https://subtle-clafoutis-64b2eb.netlify.app/)
+* Live Site URL: [subtle-clafoutis-64b2eb.netlify.app](https://subtle-clafoutis-64b2eb.netlify.app/)
